@@ -12,15 +12,15 @@ import Model.locators;
 import Utility.SpecReader;
 
 public class Actions {
-	static WebDriver driver;
-	static SpecReader reader;
+	 WebDriver driver;
+	 SpecReader reader;
 
 	public Actions() throws IOException {
 		reader = new SpecReader();
 	}
 
 	public WebDriver navigateUrl() {
-		System.setProperty("webdriver.chrome.driver","C:\\\\\\\\Users\\\\manusharma\\\\Downloads\\\\chromedriver_win32\\\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\\\\\\\Users\\\\manusharma\\\\Downloads\\\\chromedriver_win32\\\\chromedriver.exe"); 
 		driver = new ChromeDriver();
 		driver.manage().window().maximize() ;
 		driver.get("https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
@@ -51,7 +51,7 @@ public class Actions {
 		
 	}
 
-	public static WebElement getWebElement(String elementName) {
+	public  WebElement getWebElement(String elementName) {
 		locators loc = reader.getObjByElement(elementName);
 		WebElement element;
 		String type = loc.getLocatorType();
